@@ -1,6 +1,7 @@
 from django.utils import timezone
 from django.urls import include, path
 from rest_framework import viewsets, serializers
+from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework.routers import DefaultRouter
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -38,5 +39,6 @@ class SecurityViewSet(viewsets.ReadOnlyModelViewSet):
 router = DefaultRouter()
 router.register('security', SecurityViewSet)
 urlpatterns = [
-    path('', include(router.urls))
+    path("", include(router.urls)),
+    path("auth/", obtain_jwt_token),
 ]

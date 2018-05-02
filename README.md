@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mrfrac/motion-ui.svg?branch=master)](https://travis-ci.org/mrfrac/motion-ui)
+[![Build Status](https://travis-ci.org/mrfrac/motionui.svg?branch=master)](https://travis-ci.org/mrfrac/motionui)
 
 MotionUI project
 ----------------

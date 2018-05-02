@@ -25,7 +25,9 @@ class SecurityViewSet(viewsets.ReadOnlyModelViewSet):
         timestamp = self.request.query_params.get("timestamp_date")
 
         if timestamp:
-            filters["timestamp__date"] = timezone.datetime.strptime(timestamp, "%Y-%m-%d").date()
+            dt = timezone.datetime.strptime(timestamp, "%Y-%m-%d").date()
+            filters["timestamp__range"] = (timezone.datetime(dt.year, dt.month, dt.day, 0, 0, 0),
+                                           timezone.datetime(dt.year, dt.month, dt.day, 23, 59, 59))
 
         if len(filters) > 0:
             return queryset.filter(**filters)

@@ -19,3 +19,12 @@ class Security(models.Model):
     class Meta:
         managed = False
         db_table = 'security'
+
+
+class Camera(models.Model):
+    name = models.CharField(max_length=128)
+    description = models.TextField(blank=True, null=True)
+    url = models.URLField(max_length=500)
+
+    class Meta:
+        db_table = "cameras"

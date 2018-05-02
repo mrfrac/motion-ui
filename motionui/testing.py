@@ -10,5 +10,3 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'data_db.sqlite3'),
     }
 }
-
-IS_TESTING = True
